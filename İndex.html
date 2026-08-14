@@ -1,439 +1,266 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atlantik Pro | Kentsel Dönüşüm ve İnşaat Yönetim Sistemi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlantik Pro</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #f5f7fa;
-      color: #172033;
-    }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f4f6f8;
+  color:#172033;
+}
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+.header{
+  background:#ffffff;
+  padding:22px 20px;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 23px;
-      font-weight: 800;
-    }
+.logo{
+  font-size:25px;
+  font-weight:800;
+  color:#173b73;
+}
 
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: #65c957;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
-      font-weight: 900;
-    }
+.logo span{
+  color:#39a852;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #465064;
-      margin-left: 25px;
-      font-weight: 600;
-    }
+.subtitle{
+  font-size:13px;
+  color:#6b7280;
+  margin-top:4px;
+}
 
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      padding: 70px 7%;
-      background: linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
-    }
+.container{
+  padding:20px;
+  max-width:1000px;
+  margin:auto;
+}
 
-    .hero-content {
-      max-width: 850px;
-    }
+.welcome{
+  background:linear-gradient(135deg,#173b73,#245ca8);
+  color:white;
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 8px 25px rgba(23,59,115,.18);
+}
 
-    .badge {
-      display: inline-block;
-      padding: 9px 15px;
-      background: #e8f8e6;
-      color: #3c9b35;
-      border-radius: 30px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+.welcome h1{
+  font-size:25px;
+  margin-bottom:8px;
+}
 
-    h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-      letter-spacing: -2px;
-    }
+.welcome p{
+  opacity:.85;
+  font-size:14px;
+}
 
-    h1 span {
-      color: #4caf45;
-    }
+.section-title{
+  font-size:19px;
+  font-weight:750;
+  margin:25px 0 14px;
+}
 
-    .hero p {
-      max-width: 700px;
-      color: #626c7d;
-      font-size: 21px;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+.card{
+  background:white;
+  border-radius:17px;
+  padding:20px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+  cursor:pointer;
+  transition:.2s;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .2s;
-    }
+.card:active{
+  transform:scale(.98);
+}
 
-    .btn-primary {
-      background: #4caf45;
-      color: white;
-    }
+.icon{
+  width:45px;
+  height:45px;
+  border-radius:13px;
+  background:#edf4ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  margin-bottom:13px;
+}
 
-    .btn-secondary {
-      background: white;
-      color: #263043;
-      border: 1px solid #d9dee7;
-    }
+.card h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
 
-    .section {
-      padding: 80px 7%;
-    }
+.card p{
+  font-size:12px;
+  color:#7b8494;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
 
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
+.stat{
+  background:white;
+  border-radius:15px;
+  padding:17px;
+  border:1px solid #e5e7eb;
+}
 
-    .section-title p {
-      color: #70798a;
-      font-size: 18px;
-    }
+.stat strong{
+  display:block;
+  font-size:24px;
+  margin-bottom:4px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+.stat span{
+  color:#737b89;
+  font-size:12px;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid #e5e9ef;
-      box-shadow: 0 8px 25px rgba(30, 50, 80, .06);
-    }
+.bottom{
+  margin-top:25px;
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:17px;
+  text-align:center;
+  color:#687386;
+  font-size:12px;
+}
 
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      background: #edf9eb;
-      color: #4caf45;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
+@media(min-width:700px){
+  .grid{
+    grid-template-columns:repeat(4,1fr);
+  }
 
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #70798a;
-      line-height: 1.6;
-    }
-
-    .dashboard {
-      background: #172033;
-      color: white;
-      border-radius: 25px;
-      padding: 45px;
-      margin: 20px 7% 80px;
-    }
-
-    .dashboard h2 {
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
-
-    .dashboard p {
-      color: #b9c1cf;
-      margin-bottom: 30px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,.08);
-      padding: 25px;
-      border-radius: 15px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 30px;
-      margin-bottom: 7px;
-      color: #72d267;
-    }
-
-    .stat span {
-      color: #c3c9d3;
-    }
-
-    footer {
-      background: #111827;
-      color: #aeb6c4;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    @media (max-width: 800px) {
-      header {
-        padding: 15px 5%;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        padding: 60px 6%;
-        min-height: 560px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .dashboard {
-        margin: 10px 5% 60px;
-        padding: 30px 22px;
-      }
-
-      .section {
-        padding: 60px 6%;
-      }
-    }
-  </style>
+  .stats{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <div class="logo-icon">A</div>
-    Atlantik Pro
-  </div>
-
-  <nav>
-    <a href="#ozellikler">Özellikler</a>
-    <a href="#sistem">Sistem</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
+<header class="header">
+  <div class="logo">ATLANTİK <span>PRO</span></div>
+  <div class="subtitle">Kentsel Dönüşüm ve İnşaat Yönetim Sistemi</div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
+<main class="container">
 
-    <div class="badge">
-      Kentsel Dönüşüm & İnşaat Teknolojisi
-    </div>
+<section class="welcome">
+  <h1>Hoş Geldiniz 👋</h1>
+  <p>İnşaat ve kentsel dönüşüm süreçlerinizi tek merkezden yönetin.</p>
+</section>
 
-    <h1>
-      İnşaatınızı<br>
-      <span>tek merkezden</span> yönetin.
-    </h1>
+<div class="section-title">Genel Durum</div>
 
-    <p>
-      Atlantik Pro; kentsel dönüşüm, inşaat projeleri,
-      hak sahipleri, muhasebe, şantiye ve belgelerinizi
-      tek bir profesyonel yönetim sistemi altında birleştirir.
-    </p>
+<section class="stats">
+  <div class="stat">
+    <strong>0</strong>
+    <span>Aktif Proje</span>
+  </div>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="#sistem">
-        Sistemi İncele
-      </a>
+  <div class="stat">
+    <strong>0</strong>
+    <span>Hak Sahibi</span>
+  </div>
 
-      <a class="btn btn-secondary" href="#ozellikler">
-        Özellikleri Gör
-      </a>
-    </div>
+  <div class="stat">
+    <strong>₺0</strong>
+    <span>Toplam Bütçe</span>
+  </div>
 
+  <div class="stat">
+    <strong>0</strong>
+    <span>Bekleyen İşlem</span>
   </div>
 </section>
 
-<section class="section" id="ozellikler">
+<div class="section-title">Yönetim Paneli</div>
 
-  <div class="section-title">
-    <h2>Atlantik Pro ile her şey kontrol altında</h2>
-    <p>İnşaat yönetiminin ihtiyaç duyduğu bütün araçlar tek sistemde.</p>
+<section class="grid">
+
+  <div class="card">
+    <div class="icon">🏗️</div>
+    <h3>Projeler</h3>
+    <p>Projeleri ve şantiyeleri yönetin.</p>
   </div>
 
-  <div class="cards">
-
-    <div class="card">
-      <div class="card-icon">🏗️</div>
-      <h3>Projeler</h3>
-      <p>
-        Tüm inşaat projelerinizi, ilerleme durumlarını
-        ve proje bilgilerini tek ekrandan takip edin.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">👥</div>
-      <h3>Hak Sahipleri</h3>
-      <p>
-        Hak sahiplerini, bağımsız bölümleri,
-        sözleşmeleri ve ödeme durumlarını yönetin.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">💰</div>
-      <h3>Muhasebe</h3>
-      <p>
-        Gelir, gider, ödeme ve proje maliyetlerini
-        düzenli şekilde takip edin.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📄</div>
-      <h3>PDF & Belgeler</h3>
-      <p>
-        Proje belgelerinizi ve raporlarınızı
-        profesyonel şekilde oluşturun.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">👷</div>
-      <h3>Şantiye</h3>
-      <p>
-        Şantiye süreçlerini, iş kalemlerini ve
-        ilerlemeyi kolayca takip edin.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📊</div>
-      <h3>Dashboard</h3>
-      <p>
-        İşletmenizin ve projelerinizin genel durumunu
-        tek bakışta görün.
-      </p>
-    </div>
-
+  <div class="card">
+    <div class="icon">👥</div>
+    <h3>Hak Sahipleri</h3>
+    <p>Hak sahipleri ve bağımsız bölümleri yönetin.</p>
   </div>
-</section>
 
-<section class="dashboard" id="sistem">
+  <div class="card">
+    <div class="icon">💰</div>
+    <h3>Muhasebe</h3>
+    <p>Gelir, gider ve ödeme takibi.</p>
+  </div>
 
-  <h2>Atlantik Pro Yönetim Paneli</h2>
+  <div class="card">
+    <div class="icon">📄</div>
+    <h3>Belgeler</h3>
+    <p>Proje belgelerini ve PDF dosyalarını yönetin.</p>
+  </div>
 
-  <p>
-    Projelerinizi, hak sahiplerini, finansal işlemleri
-    ve şantiye süreçlerini tek panel üzerinden yönetin.
-  </p>
+  <div class="card">
+    <div class="icon">🚧</div>
+    <h3>Şantiye</h3>
+    <p>Şantiye süreçlerini ve ilerlemeyi takip edin.</p>
+  </div>
 
-  <div class="stats">
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>Raporlar</h3>
+    <p>Proje ve finans raporlarını görüntüleyin.</p>
+  </div>
 
-    <div class="stat">
-      <strong>0</strong>
-      <span>Aktif Proje</span>
-    </div>
+  <div class="card">
+    <div class="icon">🏠</div>
+    <h3>Bağımsız Bölümler</h3>
+    <p>Daire, dükkan ve diğer bölümleri yönetin.</p>
+  </div>
 
-    <div class="stat">
-      <strong>0</strong>
-      <span>Hak Sahibi</span>
-    </div>
-
-    <div class="stat">
-      <strong>0 ₺</strong>
-      <span>Toplam Gider</span>
-    </div>
-
-    <div class="stat">
-      <strong>0</strong>
-      <span>Şantiye</span>
-    </div>
-
+  <div class="card">
+    <div class="icon">⚙️</div>
+    <h3>Ayarlar</h3>
+    <p>Sistem ve kullanıcı ayarları.</p>
   </div>
 
 </section>
 
-<section class="section" id="iletisim">
+<div class="bottom">
+  Atlantik Pro © 2026<br>
+  Kentsel Dönüşüm ve İnşaat Yönetim Sistemi
+</div>
 
-  <div class="section-title">
-    <h2>Atlantik Pro</h2>
-    <p>
-      Kentsel Dönüşüm ve İnşaat Yönetim Sistemi
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  <strong>Atlantik Pro</strong>
-  <br><br>
-  © 2026 Atlantik Pro — Kentsel Dönüşüm ve İnşaat Yönetim Sistemi
-</footer>
+</main>
 
 </body>
 </html>
